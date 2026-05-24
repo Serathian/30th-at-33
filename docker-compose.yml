@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  traefik:
+    image: traefik:v2.10
+    container_name: traefik
+    restart: always
+    command:
+      - "--api.insecure=false"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      # Enable Let's Encrypt automated HTTP Challenge
+      - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
+      - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.myresolver.acme.email=${SSL_EMAIL}"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./letsencrypt:/letsencrypt"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    networks:
+      - web
+
+  web:
+    build: .
+    container_name: alpine-bash-web
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      # Secure TLS Endpoint
+      - "traefik.http.routers.alpinebash.rule=Host(`${DOMAIN_NAME}`)"
+      - "traefik.http.routers.alpinebash.entrypoints=websecure"
+      - "traefik.http.routers.alpinebash.tls.certresolver=myresolver"
+      - "traefik.http.routers.alpinebash.tls=true"
+      # Automatic HTTP to HTTPS Redirect
+      - "traefik.http.routers.alpinebash-http.rule=Host(`${DOMAIN_NAME}`)"
+      - "traefik.http.routers.alpinebash-http.entrypoints=web"
+      - "traefik.http.routers.alpinebash-http.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+    networks:
+      - web
+
+networks:
+  web:
+    external: false

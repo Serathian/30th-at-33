@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>ALPINE BASH - 33rd Birthday Retreat</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#f2f0ed",
+                      "background": "#fbf9f5",
+                      "inverse-surface": "#30312e",
+                      "on-primary-fixed": "#00201a",
+                      "secondary": "#496173",
+                      "primary": "#01261f",
+                      "inverse-primary": "#aacec3",
+                      "primary-container": "#1a3c34",
+                      "on-secondary-fixed": "#021e2d",
+                      "surface": "#fbf9f5",
+                      "surface-container-highest": "#e4e2de",
+                      "on-secondary-container": "#4f6779",
+                      "surface-variant": "#e4e2de",
+                      "tertiary-container": "#562b00",
+                      "surface-bright": "#fbf9f5",
+                      "surface-dim": "#dbdad6",
+                      "on-tertiary-fixed": "#2f1500",
+                      "on-background": "#1b1c1a",
+                      "on-error-container": "#93000a",
+                      "tertiary": "#371900",
+                      "surface-container-low": "#f5f3ef",
+                      "on-secondary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#ffb77d",
+                      "primary-fixed-dim": "#aacec3",
+                      "secondary-fixed": "#cce6fb",
+                      "surface-tint": "#43655c",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#31495b",
+                      "outline-variant": "#c1c8c4",
+                      "secondary-fixed-dim": "#b1cade",
+                      "on-primary-container": "#83a69c",
+                      "primary-fixed": "#c5eadf",
+                      "on-tertiary-container": "#eb851c",
+                      "secondary-container": "#cce6fb",
+                      "outline": "#717976",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#6e3900",
+                      "on-surface-variant": "#414846",
+                      "on-primary-fixed-variant": "#2b4d44",
+                      "on-surface": "#1b1c1a",
+                      "surface-container-high": "#eae8e4",
+                      "surface-container": "#efeeea",
+                      "tertiary-fixed": "#ffdcc3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "lg": "48px",
+                      "xs": "4px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "base": "8px",
+                      "margin-mobile": "16px",
+                      "sm": "12px",
+                      "xl": "80px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Hanken Grotesk"],
+                      "body-md": ["Hanken Grotesk"],
+                      "display-lg": ["Libre Caslon Text"],
+                      "headline-lg-mobile": ["Libre Caslon Text"],
+                      "headline-lg": ["Libre Caslon Text"],
+                      "label-caps": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .snowline-divider {
+            height: 24px;
+            width: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='24' viewBox='0 0 1200 24' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 24h1200V12c-150 0-150-8-300-8s-150 8-300 8-150-8-300-8-150 8-300 8z' fill='%23fbf9f5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background: rgba(251, 249, 245, 0.7);
+        }
+    </style>
+    <style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md shadow-sm">
+    <div class="flex items-center justify-between px-margin-mobile h-16 w-full md:px-margin-desktop">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary" data-icon="landscape">landscape</span>
+            <h1 class="font-display-lg text-headline-lg-mobile tracking-widest text-primary">ALPINE BASH</h1>
+        </div>
+        <div class="hidden md:flex gap-md items-center">
+            <a class="font-label-caps text-label-caps text-primary hover:text-tertiary-container transition-colors" href="#home">Home</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors" href="#feast">Feast</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors" href="#lodge">Sleep</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors" href="#schedule">Schedule</a>
+        </div>
+        <span class="material-symbols-outlined text-primary" data-icon="account_circle">account_circle</span>
+    </div>
+</header>
+<main class="pt-16" id="home">
+    <!-- Hero Section -->
+    <section class="relative min-h-[751px] flex flex-col items-center justify-center text-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover" data-alt="A cinematic wide shot of a luxury modern timber cabin nestled in the snowy Swiss Alps during the blue hour. Warm golden light glows from the large floor-to-ceiling glass windows, contrasting against the deep blue and white of the surrounding pine forest and snow-covered peaks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP8p3z0jNzx42hKQTAUirPCT2KyJ0OEi_rRP3T1LvDd0Qp6o0H5Es1olOEQuMH4njlIdDW-JpAHNxdTv38T7q01cIzpU2pi3VLmzIJAolaNg2qK2JGFYZ6c29KdfgTFEFoxK-cuf8NIHZxHKt47DHm76pyqCSXUBpDA-5YfVEeUuSY1lMLYkU9uLCClQqsVnvZUEScYBm7QC7lMyNhLKWN1eRs4BX1963_VOrtQqZ36A819UQ_C0vA7fI32Z9wFKDc3toRRSzQYX4u"/>
+            <div class="absolute inset-0 bg-gradient-to-b from-primary/40 to-background"></div>
+        </div>
+        <div class="relative z-10 px-margin-mobile">
+            <span class="font-label-caps text-label-caps text-primary-fixed mb-sm block tracking-[0.3em]">ESTABLISHED 1993</span>
+            <h2 class="font-display-lg text-display-lg mb-sm text-on-primary">JAKE'S ALPINE 30TH</h2>
+            <span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg block mb-md text-primary-fixed italic font-semibold">30 (+ 3 Years of Accrued Interest)</span>
+            <p class="font-body-lg text-body-lg max-w-xl mx-auto text-surface-container-lowest mb-lg">
+                Join us for a "delayed mountain retreat" at a friend's cottage in Tampere, Finland. Since we missed the actual milestone, we're celebrating a 30th birthday three years late—with slightly more wisdom, slightly less youth, and significantly better wine.
+            </p>
+            <a class="inline-flex items-center bg-tertiary-container text-on-tertiary-container px-lg py-md rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform shadow-lg active:scale-95" href="#feast">
+                VIEW THE ITINERARY
+            </a>
+        </div>
+        <div class="absolute bottom-0 w-full snowline-divider"></div>
+    </section>
+    <!-- The Feast Section -->
+    <section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface" id="feast">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-xl">
+                <span class="font-label-caps text-label-caps text-on-tertiary-container bg-tertiary-fixed px-4 py-1 rounded-full">GASTRONOMY</span>
+                <h2 class="font-headline-lg text-headline-lg mt-sm text-primary">The Mountain Feast</h2>
+                <p class="text-on-surface-variant font-body-md mt-2 italic">Pairs best with the thin, rarefied "mountain air" of the Pirkanmaa plains.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+                <!-- Dinner Card -->
+                <div class="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-outline-variant overflow-hidden group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A decadent table spread of authentic Swiss fondue and raclette in a rustic-modern lodge setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0D6_bBJgJl2RdWSiGg2qQsXwetlNdTQ6uhcoS46u0c1E5TRE0KnDgFm6hVZej-gELuuBX2tU6YgfM8ic6t4pHEZlqL75cjkZeNZucsKHBptqGRITxlnl2SPFKGCKb_2GSXf3UJIR5-30kHlO8n3YhTOiqPLYuMVDFXtZwIT7DJSlymRW-nOnNogOftA0amB9nysxfJaycrLpHMs9007-3G46g3vkjepWDB9vYmHZMAMjWzKRRHfoj3X6IvPlR6ywdSjeMcC6oR6qx"/>
+                        <div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded font-label-caps text-[10px]">EVENING SERVICE</div>
+                    </div>
+                    <div class="p-md">
+                        <div class="flex items-center gap-2 mb-sm text-on-tertiary-container">
+                            <span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+                            <h3 class="font-headline-lg text-headline-lg-mobile">The Fondue &amp; Raclette Soirée</h3>
+                        </div>
+                        <p class="mb-md text-on-surface-variant">An interactive dining experience featuring premium Gruyère, local charcuterie, and traditional accompaniments by the roaring fireplace.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-surface-container-high px-3 py-1 rounded-full font-label-caps text-[10px] text-on-surface-variant">GLUTEN FREE OPTIONS</span>
+                            <span class="bg-surface-container-high px-3 py-1 rounded-full font-label-caps text-[10px] text-on-surface-variant">LOCAL SOURCED</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Breakfast Card -->
+                <div class="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-outline-variant overflow-hidden group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated mountain breakfast set on a wooden balcony overlooking a panoramic view of the snow-capped Alps." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGfDB8a6od58G0-Uay03um87tBrI5vQf1f5VRMbgT9uR3cRYbopvytGvVqRuJSbNUmwIMxTtejsttysIlSMBkRKIB6SfyI3VRIaQTrxuOyOco9ZGDdHx3ieuEeZzAWk8S8mUm0avlLXq1EWRT7ad0GQ8uwOSE3Z1uvEnSbZNq2ohZ7ymLCgm5wLzdtzxljey_UZkPH-dstrt3wBetFeoM2Yo1nxbqgahF1abEi5Gy8uVLf-iXIqxyd_74ZqqGQgoWQQ4YfsbLrAJIB"/>
+                        <div class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 rounded font-label-caps text-[10px]">MORNING SERVICE</div>
+                    </div>
+                    <div class="p-md">
+                        <div class="flex items-center gap-2 mb-sm text-on-secondary-container">
+                            <span class="material-symbols-outlined" data-icon="coffee">coffee</span>
+                            <h3 class="font-headline-lg text-headline-lg-mobile">The 'Morning After' Brew</h3>
+                        </div>
+                        <p class="mb-md text-on-surface-variant">Rise to the scent of fresh pine and dark roast coffee. A spread of fresh alpine berries and hearty options awaits—and if we are feeling ambitious, pancakes might also make an appearance!</p>
+                        <ul class="space-y-2 text-on-surface-variant font-label-caps text-[12px]">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]" data-icon="check">check</span> Artisanal Roast Coffee &amp; Berries</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]" data-icon="check">check</span> Pancakes (ambition-dependent)*</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- The Lodge Section -->
+    <section class="py-xl bg-primary-container text-on-primary-container relative" id="lodge">
+        <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-lg items-center">
+            <div class="md:col-span-5">
+                <h2 class="font-display-lg text-headline-lg text-primary-fixed mb-md">The Sleeping Quarters</h2>
+                <p class="text-body-lg mb-lg opacity-90">Our "Mökki" offers a shared experience that blends rustic Finnish charm with modern comfort. It's built for stories told around the embers of the fire.</p>
+                <div class="space-y-md">
+                    <div class="flex gap-md items-start p-md bg-primary/20 rounded-lg border border-on-primary-fixed-variant">
+                        <span class="material-symbols-outlined text-primary-fixed" data-icon="hotel">hotel</span>
+                        <div>
+                            <h4 class="font-label-caps text-label-caps mb-xs text-primary-fixed">Sleeping Spots</h4>
+                            <p class="text-body-md text-on-primary-container/80">Five comfortable bed spots (one double, three single), plus three air mattresses and one sofa.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-md items-start p-md bg-primary/20 rounded-lg border border-on-primary-fixed-variant">
+                        <span class="material-symbols-outlined text-primary-fixed" data-icon="backpack">backpack</span>
+                        <div>
+                            <h4 class="font-label-caps text-label-caps mb-xs text-primary-fixed">What to Bring</h4>
+                            <p class="text-body-md text-on-primary-container/80">Please bring your own bed sheets to keep things fresh and cozy during the retreat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-7 grid grid-cols-2 gap-sm">
+                <div class="rounded-xl overflow-hidden h-80">
+                    <img class="w-full h-full object-cover" data-alt="An interior shot of a luxurious alpine bunk room featuring built-in wooden sleeping nooks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuGRJFt9WiPIkQEIE5iCyDjxDDwotC9FsXgnj-zC4b2oMWkTWcXyyqbd9X0KR8qTI6lEGnPYVNjKmmVnI1YctGRCahjc3t-nl9VSrNWDIRRCzpWb3nRKNUBvEJNvTsmQZt69gy0DgnZAvGhAtbst0Gu_ICibVNqC6VZASMiMwKXIW8FECpQc4OKUyMFL1kuezJrb470if51oYHSj1DzA-nGEFH6y5qCW9Y-vgGFHu97J57iCtH8yL9l5bV3CAGLTtvZmruA6Q2db-X"/>
+                </div>
+                <div class="rounded-xl overflow-hidden h-80 mt-lg">
+                    <img class="w-full h-full object-cover" data-alt="A cozy common area of a modern mountain lodge featuring a stone fireplace and plush leather armchairs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPQhwoeKQFK0-KS5rrgUAA2oQcgi7st04JLKrUSO0tiY_zWvpfUfkJpmm-zJzssTj3Cg1YGI8eb_aprA3zf4YjSLtHPzG4gBo79GQbDGdEhzeX4JPei7FoaruXcFMFytEuoU6MfdlaqjORserNNbyW7a9vHSe0Bl9nGsiDEFitGSB_CcHL7dvgKBUviHaTVW6gVOQGM-gpBWj4yKYck3ix6JDLhHo_l3s8n6S1Pb1VZD1MK8DSoXps6gf5iiuSmxjXTv5yRuvipBiP"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- The Trail Map (Schedule) -->
+    <section class="py-xl px-margin-mobile md:px-margin-desktop bg-background" id="schedule">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-xl">
+                <span class="font-label-caps text-label-caps text-on-secondary-fixed-variant bg-secondary-fixed px-4 py-1 rounded-full">THE JOURNEY</span>
+                <h2 class="font-headline-lg text-headline-lg mt-sm text-primary">The Trail Map</h2>
+            </div>
+            <div class="relative pl-8 md:pl-0">
+                <!-- Timeline Center Line (Desktop) -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px border-l border-dashed border-outline-variant"></div>
+                <!-- Timeline Side Line (Mobile) -->
+                <div class="md:hidden absolute left-0 top-0 bottom-0 w-px border-l border-dashed border-outline-variant"></div>
+                
+                <!-- Arrival -->
+                <div class="relative mb-xl md:flex md:justify-between md:items-center">
+                    <div class="md:w-[45%] md:text-right">
+                        <span class="font-label-caps text-label-caps text-primary block mb-xs">FRI 12:00 PM</span>
+                        <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">Arrival &amp; Welcome</h3>
+                        <p class="text-on-surface-variant">Check in, unpack, and enjoy a mid-day aperitif along with snacks once everyone arrives.</p>
+                    </div>
+                    <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-primary-fixed border-4 border-primary rounded-full z-10"></div>
+                    <div class="hidden md:block md:w-[45%]"></div>
+                </div>
+                
+                <!-- Continuous Feast -->
+                <div class="relative mb-xl md:flex md:justify-between md:items-center">
+                    <div class="hidden md:block md:w-[45%]"></div>
+                    <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-tertiary-fixed border-4 border-tertiary-container rounded-full z-10"></div>
+                    <div class="md:w-[45%]">
+                        <span class="font-label-caps text-label-caps text-tertiary-container block mb-xs">FRI 3:00 PM</span>
+                        <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">The Continuous Feast</h3>
+                        <p class="text-on-surface-variant">The buffet opens! Cheese fondue and raclette will be served through the evening. A continuous feast of eating, snacking, and socializing.</p>
+                    </div>
+                </div>
+                
+                <!-- Putting Tournament -->
+                <div class="relative mb-xl md:flex md:justify-between md:items-center">
+                    <div class="md:w-[45%] md:text-right">
+                        <span class="font-label-caps text-label-caps text-primary block mb-xs">FRI 4:00 PM</span>
+                        <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">Putting Tournament</h3>
+                        <p class="text-on-surface-variant">Show off your skills in our friendly, high-altitude golf putting competition.</p>
+                    </div>
+                    <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-primary-fixed border-4 border-primary rounded-full z-10"></div>
+                    <div class="hidden md:block md:w-[45%]"></div>
+                </div>
+                
+                <!-- Wine Tasting -->
+                <div class="relative mb-xl md:flex md:justify-between md:items-center">
+                    <div class="hidden md:block md:w-[45%]"></div>
+                    <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-tertiary-fixed border-4 border-tertiary-container rounded-full z-10"></div>
+                    <div class="md:w-[45%]">
+                        <span class="font-label-caps text-label-caps text-tertiary-container block mb-xs">FRI 6:00 PM</span>
+                        <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">Wine Tasting</h3>
+                        <p class="text-on-surface-variant">Savor handpicked vintages selected to complement the alpine evening.</p>
+                    </div>
+                </div>
+
+                <!-- Cake -->
+                <div class="relative mb-xl md:flex md:justify-between md:items-center">
+                    <div class="md:w-[45%] md:text-right">
+                        <span class="font-label-caps text-label-caps text-primary block mb-xs">FRI 8:00 PM</span>
+                        <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">Anniversary Cake</h3>
+                        <p class="text-on-surface-variant">A sweet celebratory moment for thirty-three years well-spent.</p>
+                    </div>
+                    <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-primary-fixed border-4 border-primary rounded-full z-10"></div>
+                    <div class="hidden md:block md:w-[45%]"></div>
+                </div>
+
+                <!-- PowerPoint Karaoke -->
+                <div class="relative mb-xl md:flex md:justify-between md:items-center">
+                    <div class="hidden md:block md:w-[45%]"></div>
+                    <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-tertiary-fixed border-4 border-tertiary-container rounded-full z-10"></div>
+                    <div class="md:w-[45%]">
+                        <span class="font-label-caps text-label-caps text-tertiary-container block mb-xs">FRI 8:30 PM</span>
+                        <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">PowerPoint Karaoke</h3>
+                        <p class="text-on-surface-variant">Hilarious, unscripted presentations where improvisational genius meets alpine comedy.</p>
+                    </div>
+                </div>
+
+                <!-- Free Socializing -->
+                <div class="relative mb-xl md:flex md:justify-between md:items-center">
+                    <div class="md:w-[45%] md:text-right">
+                        <span class="font-label-caps text-label-caps text-primary block mb-xs">FRI 9:30 PM</span>
+                        <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">Free Socializing</h3>
+                        <p class="text-on-surface-variant">Late-night chats, drinks, and music as we celebrate long into the night.</p>
+                    </div>
+                    <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-primary-fixed border-4 border-primary rounded-full z-10"></div>
+                    <div class="hidden md:block md:w-[45%]"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BYOB Notice (Bento Style) -->
+    <section class="py-xl px-margin-mobile md:px-margin-desktop">
+        <div class="max-w-4xl mx-auto glass-panel p-lg rounded-2xl border border-outline-variant shadow-lg flex flex-col md:flex-row items-center gap-lg">
+            <div class="bg-tertiary-fixed p-6 rounded-xl">
+                <span class="material-symbols-outlined text-[48px] text-tertiary-container" data-icon="liquor">liquor</span>
+            </div>
+            <div>
+                <h2 class="font-display-lg text-headline-lg text-tertiary-container mb-xs">BYOB Notice</h2>
+                <p class="text-body-lg text-on-surface-variant">We'll provide the feast and the initial welcome drinks, but please bring your favorite spirits, specialty brews, or vintage wines to share around the bonfire. There's plenty of chill space in the lodge fridge!</p>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xl bg-primary dark:bg-primary-container">
+    <div class="w-full px-margin-mobile py-lg flex flex-col items-center gap-md text-center">
+        <h2 class="font-headline-lg text-on-primary">ALPINE BASH</h2>
+        <div class="flex flex-wrap justify-center gap-md">
+            <a class="font-body-md text-body-md text-surface-variant/80 hover:text-tertiary-fixed-dim transition-colors" href="#">Contact Host</a>
+            <a class="font-body-md text-body-md text-surface-variant/80 hover:text-tertiary-fixed-dim transition-colors" href="#">Location Details</a>
+        </div>
+        <p class="font-body-md text-body-md text-on-primary opacity-60">© 2024 Alpine Retreat - See you by the lake in Tampere!</p>
+    </div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-surface dark:bg-surface-container-high border-t border-outline-variant dark:border-outline shadow-[0_-4px_20px_rgba(0,0,0,0.05)] rounded-t-xl backdrop-blur-lg">
+    <a class="flex flex-col items-center justify-center text-primary dark:text-on-tertiary-container bg-primary-fixed/30 dark:bg-tertiary-container rounded-full px-4 py-1" href="#home">
+        <span class="material-symbols-outlined" data-icon="home">home</span>
+        <span class="font-label-caps text-[10px]">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-on-surface-variant hover:bg-surface-container-lowest transition-colors" href="#feast">
+        <span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+        <span class="font-label-caps text-[10px]">Feast</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-on-surface-variant hover:bg-surface-container-lowest transition-colors" href="#lodge">
+        <span class="material-symbols-outlined" data-icon="hotel">hotel</span>
+        <span class="font-label-caps text-[10px]">Sleep</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-on-surface-variant hover:bg-surface-container-lowest transition-colors" href="#schedule">
+        <span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+        <span class="font-label-caps text-[10px]">Schedule</span>
+    </a>
+</nav>
+<script>
+    // Simple scroll spy for active states in desktop nav
+    window.addEventListener('scroll', () => {
+        const sections = ['home', 'feast', 'lodge', 'schedule'];
+        const navLinks = document.querySelectorAll('.hidden.md\\:flex a');
+        
+        let current = '';
+        sections.forEach(section => {
+            const element = document.getElementById(section);
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= 100) current = section;
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('text-primary');
+            link.classList.add('text-on-surface-variant');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('text-primary');
+                link.classList.remove('text-on-surface-variant');
+            }
+        });
+    });
+
+    // Click interaction scaling
+    document.querySelectorAll('button, a').forEach(el => {
+        el.addEventListener('mousedown', () => el.style.transform = 'scale(0.95)');
+        el.addEventListener('mouseup', () => el.style.transform = 'scale(1)');
+        el.addEventListener('mouseleave', () => el.style.transform = 'scale(1)');
+    });
+</script>
+</body>
+</html>

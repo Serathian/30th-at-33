@@ -1,0 +1,21 @@
+# Secrets and Local Configurations
+.env
+.env.local
+.env.*.local
+
+# Traefik SSL/TLS storage
+letsencrypt/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
