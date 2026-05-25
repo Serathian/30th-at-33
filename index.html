@@ -125,7 +125,7 @@
         }
     </style>
 </head>
-<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed lang-en">
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md shadow-sm">
     <div class="flex items-center justify-between px-margin-mobile h-16 w-full md:px-margin-desktop">
@@ -570,15 +570,27 @@
 <script>
     // Language switching helper
     function setLanguage(lang) {
+        // Toggle class on body for standard styling cascades
+        document.body.classList.remove('lang-en', 'lang-fi');
+        document.body.classList.add('lang-' + lang);
+
         const enElements = document.querySelectorAll('.lang-en');
         const fiElements = document.querySelectorAll('.lang-fi');
         
         if (lang === 'en') {
-            enElements.forEach(el => el.style.setProperty('display', 'inline', 'important'));
-            fiElements.forEach(el => el.style.setProperty('display', 'none', 'important'));
+            enElements.forEach(el => {
+                if (el.tagName !== 'BODY') el.style.setProperty('display', 'inline', 'important');
+            });
+            fiElements.forEach(el => {
+                if (el.tagName !== 'BODY') el.style.setProperty('display', 'none', 'important');
+            });
         } else {
-            enElements.forEach(el => el.style.setProperty('display', 'none', 'important'));
-            fiElements.forEach(el => el.style.setProperty('display', 'inline', 'important'));
+            enElements.forEach(el => {
+                if (el.tagName !== 'BODY') el.style.setProperty('display', 'none', 'important');
+            });
+            fiElements.forEach(el => {
+                if (el.tagName !== 'BODY') el.style.setProperty('display', 'inline', 'important');
+            });
         }
         
         const btnEn = document.getElementById('lang-btn-en');
