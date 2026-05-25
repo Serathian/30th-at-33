@@ -115,16 +115,16 @@
         }
         
         /* Language Toggle Styles */
-        .lang-fi {
+        .locale-fi {
             display: none;
         }
-        body.lang-en .lang-fi {
+        body.active-locale-en .locale-fi {
             display: none;
         }
-        body.lang-fi .lang-en {
+        body.active-locale-fi .locale-en {
             display: none;
         }
-        body.lang-fi .lang-fi {
+        body.active-locale-fi .locale-fi {
             display: inline;
         }
     </style>
@@ -141,33 +141,33 @@
         <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-primary" data-icon="landscape">landscape</span>
             <h1 class="font-display-lg text-headline-lg-mobile tracking-widest text-primary">
-                <span class="lang-en">ALPINE BASH</span>
-                <span class="lang-fi">ALPPIJUHLAT</span>
+                <span class="locale-en">ALPINE BASH</span>
+                <span class="locale-fi">ALPPIJUHLAT</span>
             </h1>
         </div>
         <div class="hidden md:flex gap-md items-center">
             <a class="font-label-caps text-label-caps text-primary hover:text-tertiary-container transition-colors" href="#home">
-                <span class="lang-en">Home</span>
-                <span class="lang-fi">Koti</span>
+                <span class="locale-en">Home</span>
+                <span class="locale-fi">Koti</span>
             </a>
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors" href="#feast">
-                <span class="lang-en">Feast</span>
-                <span class="lang-fi">Juhla-ateria</span>
+                <span class="locale-en">Feast</span>
+                <span class="locale-fi">Juhla-ateria</span>
             </a>
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors" href="#lodge">
-                <span class="lang-en">Sleep</span>
-                <span class="lang-fi">Majoitus</span>
+                <span class="locale-en">Sleep</span>
+                <span class="locale-fi">Majoitus</span>
             </a>
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors" href="#schedule">
-                <span class="lang-en">Schedule</span>
-                <span class="lang-fi">Aikataulu</span>
+                <span class="locale-en">Schedule</span>
+                <span class="locale-fi">Aikataulu</span>
             </a>
         </div>
         
         <!-- Language Selector -->
         <div class="flex items-center gap-1 bg-surface-container-high dark:bg-surface-container rounded-full p-1 border border-outline-variant select-none shadow-sm">
-            <button id="lang-btn-en" class="px-3 py-1 text-xs font-bold font-label-caps rounded-full transition-all duration-300 bg-primary text-on-primary shadow-sm" onclick="setLanguage('en')">EN</button>
-            <button id="lang-btn-fi" class="px-3 py-1 text-xs font-label-caps rounded-full transition-all duration-300 text-on-surface-variant hover:text-primary" onclick="setLanguage('fi')">FI</button>
+            <button id="locale-btn-en" class="px-3 py-1 text-xs font-bold font-label-caps rounded-full transition-all duration-300 bg-primary text-on-primary shadow-sm" onclick="setLocale('en')">EN</button>
+            <button id="locale-btn-fi" class="px-3 py-1 text-xs font-label-caps rounded-full transition-all duration-300 text-on-surface-variant hover:text-primary" onclick="setLocale('fi')">FI</button>
         </div>
     </div>
 </header>
@@ -180,24 +180,24 @@
         </div>
         <div class="relative z-10 px-margin-mobile">
             <span class="font-label-caps text-label-caps text-primary-fixed mb-sm block tracking-[0.3em]">
-                <span class="lang-en">ESTABLISHED 1993</span>
-                <span class="lang-fi">PERUSTETTU 1993</span>
+                <span class="locale-en">ESTABLISHED 1993</span>
+                <span class="locale-fi">PERUSTETTU 1993</span>
             </span>
             <h2 class="font-display-lg text-display-lg mb-sm text-on-primary">
-                <span class="lang-en">JAKE'S ALPINE 30TH</span>
-                <span class="lang-fi">JAKEN ALPPI-30TH</span>
+                <span class="locale-en">JAKE'S ALPINE 30TH</span>
+                <span class="locale-fi">JAKEN ALPPI-30TH</span>
             </h2>
             <span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg block mb-md text-primary-fixed italic font-semibold">
-                <span class="lang-en">30 (+ 3 Years of Accrued Interest)</span>
-                <span class="lang-fi">30 (+ 3 vuotta kertynyttä korkoa)</span>
+                <span class="locale-en">30 (+ 3 Years of Accrued Interest)</span>
+                <span class="locale-fi">30 (+ 3 vuotta kertynyttä korkoa)</span>
             </span>
             <p class="font-body-lg text-body-lg max-w-xl mx-auto text-surface-container-lowest mb-lg">
-                <span class="lang-en">Join us for a "delayed mountain retreat" at a friend's cottage in Tampere, Finland. Since we missed the actual milestone, we're celebrating a 30th birthday three years late—with slightly more wisdom, slightly less youth, and significantly better wine.</span>
-                <span class="lang-fi">Liity seuraamme "viivästyneelle vuoristoretriitille" ystävän mökille Tampereella. Koska itse virstanpylväs jäi välistä, juhlimme kolmekymppisiä kolme vuotta myöhässä – hieman viisaampina, hieman vähemmän nuorina ja huomattavasti paremman viinin kera.</span>
+                <span class="locale-en">Join us for a "delayed mountain retreat" at a friend's cottage in Tampere, Finland. Since we missed the actual milestone, we're celebrating a 30th birthday three years late—with slightly more wisdom, slightly less youth, and significantly better wine.</span>
+                <span class="locale-fi">Liity seuraamme "viivästyneelle vuoristoretriitille" ystävän mökille Tampereella. Koska itse virstanpylväs jäi välistä, juhlimme kolmekymppisiä kolme vuotta myöhässä – hieman viisaampina, hieman vähemmän nuorina ja huomattavasti paremman viinin kera.</span>
             </p>
             <a class="inline-flex items-center bg-tertiary-container text-on-tertiary-container px-lg py-md rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform shadow-lg active:scale-95" href="#feast">
-                <span class="lang-en">VIEW THE ITINERARY</span>
-                <span class="lang-fi">KATSO OHJELMA</span>
+                <span class="locale-en">VIEW THE ITINERARY</span>
+                <span class="locale-fi">KATSO OHJELMA</span>
             </a>
         </div>
         <div class="absolute bottom-0 w-full snowline-divider"></div>
@@ -207,16 +207,16 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-xl">
                 <span class="font-label-caps text-label-caps text-on-tertiary-container bg-tertiary-fixed px-4 py-1 rounded-full">
-                    <span class="lang-en">GASTRONOMY</span>
-                    <span class="lang-fi">GASTRONOMIA</span>
+                    <span class="locale-en">GASTRONOMY</span>
+                    <span class="locale-fi">GASTRONOMIA</span>
                 </span>
                 <h2 class="font-headline-lg text-headline-lg mt-sm text-primary">
-                    <span class="lang-en">The Mountain Feast</span>
-                    <span class="lang-fi">Vuoristoateria</span>
+                    <span class="locale-en">The Mountain Feast</span>
+                    <span class="locale-fi">Vuoristoateria</span>
                 </h2>
                 <p class="text-on-surface-variant font-body-md mt-2 italic">
-                    <span class="lang-en">Pairs best with the thin, rarefied "mountain air" of the Pirkanmaa plains.</span>
-                    <span class="lang-fi">Sopii parhaiten Pirkanmaan tasankojen harvaan ja raikkaaseen "vuoristoilmaan".</span>
+                    <span class="locale-en">Pairs best with the thin, rarefied "mountain air" of the Pirkanmaa plains.</span>
+                    <span class="locale-fi">Sopii parhaiten Pirkanmaan tasankojen harvaan ja raikkaaseen "vuoristoilmaan".</span>
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
@@ -225,30 +225,30 @@
                     <div class="h-64 overflow-hidden relative">
                         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A decadent table spread of authentic Swiss fondue and raclette in a rustic-modern lodge setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0D6_bBJgJl2RdWSiGg2qQsXwetlNdTQ6uhcoS46u0c1E5TRE0KnDgFm6hVZej-gELuuBX2tU6YgfM8ic6t4pHEZlqL75cjkZeNZucsKHBptqGRITxlnl2SPFKGCKb_2GSXf3UJIR5-30kHlO8n3YhTOiqPLYuMVDFXtZwIT7DJSlymRW-nOnNogOftA0amB9nysxfJaycrLpHMs9007-3G46g3vkjepWDB9vYmHZMAMjWzKRRHfoj3X6IvPlR6ywdSjeMcC6oR6qx"/>
                         <div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded font-label-caps text-[10px]">
-                            <span class="lang-en">EVENING SERVICE</span>
-                            <span class="lang-fi">ILLALLINEN</span>
+                            <span class="locale-en">EVENING SERVICE</span>
+                            <span class="locale-fi">ILLALLINEN</span>
                         </div>
                     </div>
                     <div class="p-md">
                         <div class="flex items-center gap-2 mb-sm text-on-tertiary-container">
                             <span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
                             <h3 class="font-headline-lg text-headline-lg-mobile">
-                                <span class="lang-en">The Fondue &amp; Raclette Soirée</span>
-                                <span class="lang-fi">Fondue- &amp; Raclette-ilta</span>
+                                <span class="locale-en">The Fondue &amp; Raclette Soirée</span>
+                                <span class="locale-fi">Fondue- &amp; Raclette-ilta</span>
                             </h3>
                         </div>
                         <p class="mb-md text-on-surface-variant">
-                            <span class="lang-en">An interactive dining experience featuring premium Gruyère, local charcuterie, and traditional accompaniments by the roaring fireplace.</span>
-                            <span class="lang-fi">Interaktiivinen illallinen, jossa tarjoillaan ensiluokkaista Gruyèrea, paikallisia leikkeleitä ja perinteisiä lisukkeita takkatulen loisteessa.</span>
+                            <span class="locale-en">An interactive dining experience featuring premium Gruyère, local charcuterie, and traditional accompaniments by the roaring fireplace.</span>
+                            <span class="locale-fi">Interaktiivinen illallinen, jossa tarjoillaan ensiluokkaista Gruyèrea, paikallisia leikkeleitä ja perinteisiä lisukkeita takkatulen loisteessa.</span>
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span class="bg-surface-container-high px-3 py-1 rounded-full font-label-caps text-[10px] text-on-surface-variant">
-                                <span class="lang-en">GLUTEN FREE OPTIONS</span>
-                                <span class="lang-fi">GLUTEENITTOMAT VAIHTOEHDOT</span>
+                                <span class="locale-en">GLUTEN FREE OPTIONS</span>
+                                <span class="locale-fi">GLUTEENITTOMAT VAIHTOEHDOT</span>
                             </span>
                             <span class="bg-surface-container-high px-3 py-1 rounded-full font-label-caps text-[10px] text-on-surface-variant">
-                                <span class="lang-en">LOCAL SOURCED</span>
-                                <span class="lang-fi">LÄHIRUOKAA</span>
+                                <span class="locale-en">LOCAL SOURCED</span>
+                                <span class="locale-fi">LÄHIRUOKAA</span>
                             </span>
                         </div>
                     </div>
@@ -258,32 +258,32 @@
                     <div class="h-64 overflow-hidden relative">
                         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated mountain breakfast set on a wooden balcony overlooking a panoramic view of the snow-capped Alps." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGfDB8a6od58G0-Uay03um87tBrI5vQf1f5VRMbgT9uR3cRYbopvytGvVqRuJSbNUmwIMxTtejsttysIlSMBkRKIB6SfyI3VRIaQTrxuOyOco9ZGDdHx3ieuEeZzAWk8S8mUm0avlLXq1EWRT7ad0GQ8uwOSE3Z1uvEnSbZNq2ohZ7ymLCgm5wLzdtzxljey_UZkPH-dstrt3wBetFeoM2Yo1nxbqgahF1abEi5Gy8uVLf-iXIqxyd_74ZqqGQgoWQQ4YfsbLrAJIB"/>
                         <div class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 rounded font-label-caps text-[10px]">
-                            <span class="lang-en">MORNING SERVICE</span>
-                            <span class="lang-fi">AAMIAINEN</span>
+                            <span class="locale-en">MORNING SERVICE</span>
+                            <span class="locale-fi">AAMIAINEN</span>
                         </div>
                     </div>
                     <div class="p-md">
                         <div class="flex items-center gap-2 mb-sm text-on-secondary-container">
                             <span class="material-symbols-outlined" data-icon="coffee">coffee</span>
                             <h3 class="font-headline-lg text-headline-lg-mobile">
-                                <span class="lang-en">The 'Morning After' Brew</span>
-                                <span class="lang-fi">Seuraavan aamun kahvit</span>
+                                <span class="locale-en">The 'Morning After' Brew</span>
+                                <span class="locale-fi">Seuraavan aamun kahvit</span>
                             </h3>
                         </div>
                         <p class="mb-md text-on-surface-variant">
-                            <span class="lang-en">Rise to the scent of fresh pine and dark roast coffee. A spread of fresh alpine berries and hearty options awaits—and if we are feeling ambitious, pancakes might also make an appearance!</span>
-                            <span class="lang-fi">Herää tuoreen männyntuoksun ja tummapaahtoisen kahvin tuoksuun. Tarjolla on tuoreita metsämarjoja ja runsaita aamiaisvaihtoehtoja – ja jos olemme tarmokkaita, pannukakutkin saattavat tehdä esiintymisen!</span>
+                            <span class="locale-en">Rise to the scent of fresh pine and dark roast coffee. A spread of fresh alpine berries and hearty options awaits—and if we are feeling ambitious, pancakes might also make an appearance!</span>
+                            <span class="locale-fi">Herää tuoreen männyntuoksun ja tummapaahtoisen kahvin tuoksuun. Tarjolla on tuoreita metsämarjoja ja runsaita aamiaisvaihtoehtoja – ja jos olemme tarmokkaita, pannukakutkin saattavat tehdä esiintymisen!</span>
                         </p>
                         <ul class="space-y-2 text-on-surface-variant font-label-caps text-[12px]">
                             <li class="flex items-center gap-2">
                                 <span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
-                                <span class="lang-en">Artisanal Roast Coffee &amp; Berries</span>
-                                <span class="lang-fi">Pienpaahtimon kahvia &amp; marjoja</span>
+                                <span class="locale-en">Artisanal Roast Coffee &amp; Berries</span>
+                                <span class="locale-fi">Pienpaahtimon kahvia &amp; marjoja</span>
                             </li>
                             <li class="flex items-center gap-2">
                                 <span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
-                                <span class="lang-en">Pancakes (ambition-dependent)*</span>
-                                <span class="lang-fi">Pannukakkuja (tarmokkuudesta riippuen)*</span>
+                                <span class="locale-en">Pancakes (ambition-dependent)*</span>
+                                <span class="locale-fi">Pannukakkuja (tarmokkuudesta riippuen)*</span>
                             </li>
                         </ul>
                     </div>
@@ -296,24 +296,24 @@
         <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-lg items-center">
             <div class="md:col-span-5">
                 <h2 class="font-display-lg text-headline-lg text-primary-fixed mb-md">
-                    <span class="lang-en">The Sleeping Quarters</span>
-                    <span class="lang-fi">Majoitus ja Yösijat</span>
+                    <span class="locale-en">The Sleeping Quarters</span>
+                    <span class="locale-fi">Majoitus ja Yösijat</span>
                 </h2>
                 <p class="text-body-lg mb-lg opacity-90">
-                    <span class="lang-en">Our "Mökki" offers a shared experience that blends rustic Finnish charm with modern comfort. It's built for stories told around the embers of the fire.</span>
-                    <span class="lang-fi">Mökkimme tarjoaa yhteisöllisen kokemuksen, jossa maalaismainen suomalainen tunnelma kohtaa modernin mukavuuden. Se on luotu takkatulen äärellä jaettaville tarinoille.</span>
+                    <span class="locale-en">Our "Mökki" offers a shared experience that blends rustic Finnish charm with modern comfort. It's built for stories told around the embers of the fire.</span>
+                    <span class="locale-fi">Mökkimme tarjoaa yhteisöllisen kokemuksen, jossa maalaismainen suomalainen tunnelma kohtaa modernin mukavuuden. Se on luotu takkatulen äärellä jaettaville tarinoille.</span>
                 </p>
                 <div class="space-y-md">
                     <div class="flex gap-md items-start p-md bg-primary/20 rounded-lg border border-on-primary-fixed-variant">
                         <span class="material-symbols-outlined text-primary-fixed" data-icon="hotel">hotel</span>
                         <div>
                             <h4 class="font-label-caps text-label-caps mb-xs text-primary-fixed">
-                                <span class="lang-en">Sleeping Spots</span>
-                                <span class="lang-fi">Nukkumapaikat</span>
+                                <span class="locale-en">Sleeping Spots</span>
+                                <span class="locale-fi">Nukkumapaikat</span>
                             </h4>
                             <p class="text-body-md text-on-primary-container/80">
-                                <span class="lang-en">Five comfortable bed spots (one double, three single), plus three air mattresses and one sofa.</span>
-                                <span class="lang-fi">Viisi mukavaa vuodepaikkaa (yksi parivuode, kolme yhden hengen vuodetta), sekä kolme ilmapatjaa ja yksi sohva.</span>
+                                <span class="locale-en">Five comfortable bed spots (one double, three single), plus three air mattresses and one sofa.</span>
+                                <span class="locale-fi">Viisi mukavaa vuodepaikkaa (yksi parivuode, kolme yhden hengen vuodetta), sekä kolme ilmapatjaa ja yksi sohva.</span>
                             </p>
                         </div>
                     </div>
@@ -321,12 +321,12 @@
                         <span class="material-symbols-outlined text-primary-fixed" data-icon="backpack">backpack</span>
                         <div>
                             <h4 class="font-label-caps text-label-caps mb-xs text-primary-fixed">
-                                <span class="lang-en">What to Bring</span>
-                                <span class="lang-fi">Mitä tuoda mukana</span>
+                                <span class="locale-en">What to Bring</span>
+                                <span class="locale-fi">Mitä tuoda mukana</span>
                             </h4>
                             <p class="text-body-md text-on-primary-container/80">
-                                <span class="lang-en">Please bring your own bed sheets to keep things fresh and cozy during the retreat.</span>
-                                <span class="lang-fi">Otathan mukaan omat lakana- ja liinavaatteet pitääksesi yösijasi raikkaana ja viihtyisänä.</span>
+                                <span class="locale-en">Please bring your own bed sheets to keep things fresh and cozy during the retreat.</span>
+                                <span class="locale-fi">Otathan mukaan omat lakana- ja liinavaatteet pitääksesi yösijasi raikkaana ja viihtyisänä.</span>
                             </p>
                         </div>
                     </div>
@@ -347,12 +347,12 @@
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-xl">
                 <span class="font-label-caps text-label-caps text-on-secondary-fixed-variant bg-secondary-fixed px-4 py-1 rounded-full">
-                    <span class="lang-en">THE JOURNEY</span>
-                    <span class="lang-fi">MATKA</span>
+                    <span class="locale-en">THE JOURNEY</span>
+                    <span class="locale-fi">MATKA</span>
                 </span>
                 <h2 class="font-headline-lg text-headline-lg mt-sm text-primary">
-                    <span class="lang-en">The Trail Map — Saturday, June 6th</span>
-                    <span class="lang-fi">Reittikartta — Lauantai 6. Kesäkuuta</span>
+                    <span class="locale-en">The Trail Map — Saturday, June 6th</span>
+                    <span class="locale-fi">Reittikartta — Lauantai 6. Kesäkuuta</span>
                 </h2>
             </div>
             <div class="relative pl-8 md:pl-0">
@@ -365,16 +365,16 @@
                 <div class="relative mb-xl md:flex md:justify-between md:items-center">
                     <div class="md:w-[45%] md:text-right">
                         <span class="font-label-caps text-label-caps text-primary block mb-xs">
-                            <span class="lang-en">SAT 12:00 PM</span>
-                            <span class="lang-fi">LA 12:00</span>
+                            <span class="locale-en">SAT 12:00 PM</span>
+                            <span class="locale-fi">LA 12:00</span>
                         </span>
                         <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">
-                            <span class="lang-en">Arrival &amp; Welcome</span>
-                            <span class="lang-fi">Saapuminen &amp; Tervetuliaiset</span>
+                            <span class="locale-en">Arrival &amp; Welcome</span>
+                            <span class="locale-fi">Saapuminen &amp; Tervetuliaiset</span>
                         </h3>
                         <p class="text-on-surface-variant">
-                            <span class="lang-en">Check in, unpack, and enjoy a mid-day aperitif along with snacks once everyone arrives.</span>
-                            <span class="lang-fi">Asetu taloksi, pura tavarasi ja nauti keskipäivän aperitiivi sekä pientä purtavaa, kun kaikki ovat saapuneet.</span>
+                            <span class="locale-en">Check in, unpack, and enjoy a mid-day aperitif along with snacks once everyone arrives.</span>
+                            <span class="locale-fi">Asetu taloksi, pura tavarasi ja nauti keskipäivän aperitiivi sekä pientä purtavaa, kun kaikki ovat saapuneet.</span>
                         </p>
                     </div>
                     <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-primary-fixed border-4 border-primary rounded-full z-10"></div>
@@ -387,16 +387,16 @@
                     <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-tertiary-fixed border-4 border-tertiary-container rounded-full z-10"></div>
                     <div class="md:w-[45%]">
                         <span class="font-label-caps text-label-caps text-tertiary-container block mb-xs">
-                            <span class="lang-en">SAT 3:00 PM</span>
-                            <span class="lang-fi">LA 15:00</span>
+                            <span class="locale-en">SAT 3:00 PM</span>
+                            <span class="locale-fi">LA 15:00</span>
                         </span>
                         <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">
-                            <span class="lang-en">The Continuous Feast</span>
-                            <span class="lang-fi">Jatkuva Ruokailu</span>
+                            <span class="locale-en">The Continuous Feast</span>
+                            <span class="locale-fi">Jatkuva Ruokailu</span>
                         </h3>
                         <p class="text-on-surface-variant">
-                            <span class="lang-en">The buffet opens! Cheese fondue and raclette will be served through the evening. A continuous feast of eating, snacking, and socializing.</span>
-                            <span class="lang-fi">Noutopöytä aukeaa! Juustofondue ja raclette ovat tarjolla pitkin iltaa. Jatkuvaa syömistä, napostelua ja seurustelua.</span>
+                            <span class="locale-en">The buffet opens! Cheese fondue and raclette will be served through the evening. A continuous feast of eating, snacking, and socializing.</span>
+                            <span class="locale-fi">Noutopöytä aukeaa! Juustofondue ja raclette ovat tarjolla pitkin iltaa. Jatkuvaa syömistä, napostelua ja seurustelua.</span>
                         </p>
                     </div>
                 </div>
@@ -405,16 +405,16 @@
                 <div class="relative mb-xl md:flex md:justify-between md:items-center">
                     <div class="md:w-[45%] md:text-right">
                         <span class="font-label-caps text-label-caps text-primary block mb-xs">
-                            <span class="lang-en">SAT 4:00 PM</span>
-                            <span class="lang-fi">LA 16:00</span>
+                            <span class="locale-en">SAT 4:00 PM</span>
+                            <span class="locale-fi">LA 16:00</span>
                         </span>
                         <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">
-                            <span class="lang-en">Putting Tournament</span>
-                            <span class="lang-fi">Puttausturnaus</span>
+                            <span class="locale-en">Putting Tournament</span>
+                            <span class="locale-fi">Puttausturnaus</span>
                         </h3>
                         <p class="text-on-surface-variant">
-                            <span class="lang-en">Show off your skills in our friendly, high-altitude golf putting competition.</span>
-                            <span class="lang-fi">Esittele taitojasi ystävällisessä ja korkeatasoisessa golfin puttauskilpailussamme.</span>
+                            <span class="locale-en">Show off your skills in our friendly, high-altitude golf putting competition.</span>
+                            <span class="locale-fi">Esittele taitojasi ystävällisessä ja korkeatasoisessa golfin puttauskilpailussamme.</span>
                         </p>
                     </div>
                     <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-primary-fixed border-4 border-primary rounded-full z-10"></div>
@@ -427,16 +427,16 @@
                     <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-tertiary-fixed border-4 border-tertiary-container rounded-full z-10"></div>
                     <div class="md:w-[45%]">
                         <span class="font-label-caps text-label-caps text-tertiary-container block mb-xs">
-                            <span class="lang-en">SAT 6:00 PM</span>
-                            <span class="lang-fi">LA 18:00</span>
+                            <span class="locale-en">SAT 6:00 PM</span>
+                            <span class="locale-fi">LA 18:00</span>
                         </span>
                         <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">
-                            <span class="lang-en">Wine Tasting</span>
-                            <span class="lang-fi">Viininmaistelu</span>
+                            <span class="locale-en">Wine Tasting</span>
+                            <span class="locale-fi">Viininmaistelu</span>
                         </h3>
                         <p class="text-on-surface-variant">
-                            <span class="lang-en">Savor handpicked vintages selected to complement the alpine evening, hosted by Ilari.</span>
-                            <span class="lang-fi">Nauti käsin valikoiduista vuosikerroista, jotka kruunaavat alppi-illan. Isäntänä toimii Ilari.</span>
+                            <span class="locale-en">Savor handpicked vintages selected to complement the alpine evening, hosted by Ilari.</span>
+                            <span class="locale-fi">Nauti käsin valikoiduista vuosikerroista, jotka kruunaavat alppi-illan. Isäntänä toimii Ilari.</span>
                         </p>
                     </div>
                 </div>
@@ -445,16 +445,16 @@
                 <div class="relative mb-xl md:flex md:justify-between md:items-center">
                     <div class="md:w-[45%] md:text-right">
                         <span class="font-label-caps text-label-caps text-primary block mb-xs">
-                            <span class="lang-en">SAT 8:00 PM</span>
-                            <span class="lang-fi">LA 20:00</span>
+                            <span class="locale-en">SAT 8:00 PM</span>
+                            <span class="locale-fi">LA 20:00</span>
                         </span>
                         <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">
-                            <span class="lang-en">Anniversary Cake</span>
-                            <span class="lang-fi">Syntymäpäiväkakku</span>
+                            <span class="locale-en">Anniversary Cake</span>
+                            <span class="locale-fi">Syntymäpäiväkakku</span>
                         </h3>
                         <p class="text-on-surface-variant">
-                            <span class="lang-en">A sweet celebratory moment for thirty-three years well-spent, courtesy of Ella.</span>
-                            <span class="lang-fi">Makea juhlahetki kolmenkymmenenkolmen hyvin vietetyn vuoden kunniaksi, Ellan tarjoamana.</span>
+                            <span class="locale-en">A sweet celebratory moment for thirty-three years well-spent, courtesy of Ella.</span>
+                            <span class="locale-fi">Makea juhlahetki kolmenkymmenenkolmen hyvin vietetyn vuoden kunniaksi, Ellan tarjoamana.</span>
                         </p>
                     </div>
                     <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-primary-fixed border-4 border-primary rounded-full z-10"></div>
@@ -467,16 +467,16 @@
                     <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-tertiary-fixed border-4 border-tertiary-container rounded-full z-10"></div>
                     <div class="md:w-[45%]">
                         <span class="font-label-caps text-label-caps text-tertiary-container block mb-xs">
-                            <span class="lang-en">SAT 8:30 PM</span>
-                            <span class="lang-fi">LA 20:30</span>
+                            <span class="locale-en">SAT 8:30 PM</span>
+                            <span class="locale-fi">LA 20:30</span>
                         </span>
                         <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">
-                            <span class="lang-en">PowerPoint Karaoke</span>
-                            <span class="lang-fi">PowerPoint-karaoke</span>
+                            <span class="locale-en">PowerPoint Karaoke</span>
+                            <span class="locale-fi">PowerPoint-karaoke</span>
                         </h3>
                         <p class="text-on-surface-variant">
-                            <span class="lang-en">Hilarious, unscripted presentations where improvisational genius meets alpine comedy.</span>
-                            <span class="lang-fi">Hupaisia, täysin käsikirjoittamattomia esityksiä, joissa improvisaatiokyky kohtaa alppikomedian.</span>
+                            <span class="locale-en">Hilarious, unscripted presentations where improvisational genius meets alpine comedy.</span>
+                            <span class="locale-fi">Hupaisia, täysin käsikirjoittamattomia esityksiä, joissa improvisaatiokyky kohtaa alppikomedian.</span>
                         </p>
                     </div>
                 </div>
@@ -485,16 +485,16 @@
                 <div class="relative mb-xl md:flex md:justify-between md:items-center">
                     <div class="md:w-[45%] md:text-right">
                         <span class="font-label-caps text-label-caps text-primary block mb-xs">
-                            <span class="lang-en">SAT 9:30 PM</span>
-                            <span class="lang-fi">LA 21:30</span>
+                            <span class="locale-en">SAT 9:30 PM</span>
+                            <span class="locale-fi">LA 21:30</span>
                         </span>
                         <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs text-primary">
-                            <span class="lang-en">Free Socializing</span>
-                            <span class="lang-fi">Vapaa seurustelu</span>
+                            <span class="locale-en">Free Socializing</span>
+                            <span class="locale-fi">Vapaa seurustelu</span>
                         </h3>
                         <p class="text-on-surface-variant">
-                            <span class="lang-en">Late-night chats, drinks, and music as we celebrate long into the night.</span>
-                            <span class="lang-fi">Myöhäisillan keskusteluja, juomia ja musiikkia, kun juhlimme pitkälle yöhön.</span>
+                            <span class="locale-en">Late-night chats, drinks, and music as we celebrate long into the night.</span>
+                            <span class="locale-fi">Myöhäisillan keskusteluja, juomia ja musiikkia, kun juhlimme pitkälle yöhön.</span>
                         </p>
                     </div>
                     <div class="absolute -left-10 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-primary-fixed border-4 border-primary rounded-full z-10"></div>
@@ -511,12 +511,12 @@
             </div>
             <div>
                 <h2 class="font-display-lg text-headline-lg text-tertiary-container mb-xs">
-                    <span class="lang-en">BYOB Notice</span>
-                    <span class="lang-fi">Omat juomat mukaan (BYOB)</span>
+                    <span class="locale-en">BYOB Notice</span>
+                    <span class="locale-fi">Omat juomat mukaan (BYOB)</span>
                 </h2>
                 <p class="text-body-lg text-on-surface-variant">
-                    <span class="lang-en">We'll provide the feast and the initial welcome drinks, but please bring your favorite spirits, specialty brews, or vintage wines to share around the bonfire. There's plenty of chill space in the lodge fridge!</span>
-                    <span class="lang-fi">Me tarjoamme ruoat ja alku-tervetuliaisjuomat, mutta otathan mukaan suosikkijuomasi, erikoisoluet tai viinit jaettavaksi nuotion äärellä. Mökin jääkaapissa on runsaasti kylmää tilaa!</span>
+                    <span class="locale-en">We'll provide the feast and the initial welcome drinks, but please bring your favorite spirits, specialty brews, or vintage wines to share around the bonfire. There's plenty of chill space in the lodge fridge!</span>
+                    <span class="locale-fi">Me tarjoamme ruoat ja alku-tervetuliaisjuomat, mutta otathan mukaan suosikkijuomasi, erikoisoluet tai viinit jaettavaksi nuotion äärellä. Mökin jääkaapissa on runsaasti kylmää tilaa!</span>
                 </p>
             </div>
         </div>
@@ -526,22 +526,22 @@
 <footer class="w-full mt-xl bg-primary dark:bg-primary-container">
     <div class="w-full px-margin-mobile py-lg flex flex-col items-center gap-md text-center">
         <h2 class="font-headline-lg text-on-primary">
-            <span class="lang-en">ALPINE BASH</span>
-            <span class="lang-fi">ALPPIJUHLAT</span>
+            <span class="locale-en">ALPINE BASH</span>
+            <span class="locale-fi">ALPPIJUHLAT</span>
         </h2>
         <div class="flex flex-wrap justify-center gap-md">
             <a class="font-body-md text-body-md text-surface-variant/80 hover:text-tertiary-fixed-dim transition-colors" href="#">
-                <span class="lang-en">Contact Host</span>
-                <span class="lang-fi">Ota yhteys isäntään</span>
+                <span class="locale-en">Contact Host</span>
+                <span class="locale-fi">Ota yhteys isäntään</span>
             </a>
             <a class="font-body-md text-body-md text-surface-variant/80 hover:text-tertiary-fixed-dim transition-colors" href="#">
-                <span class="lang-en">Location Details</span>
-                <span class="lang-fi">Sijaintitiedot</span>
+                <span class="locale-en">Location Details</span>
+                <span class="locale-fi">Sijaintitiedot</span>
             </a>
         </div>
         <p class="font-body-md text-body-md text-on-primary opacity-60">
-            <span class="lang-en">© 2026 Alpine Retreat - See you by the lake in Tampere!</span>
-            <span class="lang-fi">© 2026 Alppiretriitti - Nähdään järven rannalla Tampereella!</span>
+            <span class="locale-en">© 2026 Alpine Retreat - See you by the lake in Tampere!</span>
+            <span class="locale-fi">© 2026 Alppiretriitti - Nähdään järven rannalla Tampereella!</span>
         </p>
     </div>
 </footer>
@@ -550,41 +550,41 @@
     <a class="flex flex-col items-center justify-center text-primary dark:text-on-tertiary-container bg-primary-fixed/30 dark:bg-tertiary-container rounded-full px-4 py-1" href="#home">
         <span class="material-symbols-outlined" data-icon="home">home</span>
         <span class="font-label-caps text-[10px]">
-            <span class="lang-en">Home</span>
-            <span class="lang-fi">Koti</span>
+            <span class="locale-en">Home</span>
+            <span class="locale-fi">Koti</span>
         </span>
     </a>
     <a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-on-surface-variant hover:bg-surface-container-lowest transition-colors" href="#feast">
         <span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
         <span class="font-label-caps text-[10px]">
-            <span class="lang-en">Feast</span>
-            <span class="lang-fi">Juhla-ateria</span>
+            <span class="locale-en">Feast</span>
+            <span class="locale-fi">Juhla-ateria</span>
         </span>
     </a>
     <a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-on-surface-variant hover:bg-surface-container-lowest transition-colors" href="#lodge">
         <span class="material-symbols-outlined" data-icon="hotel">hotel</span>
         <span class="font-label-caps text-[10px]">
-            <span class="lang-en">Sleep</span>
-            <span class="lang-fi">Majoitus</span>
+            <span class="locale-en">Sleep</span>
+            <span class="locale-fi">Majoitus</span>
         </span>
     </a>
     <a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-on-surface-variant hover:bg-surface-container-lowest transition-colors" href="#schedule">
         <span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
         <span class="font-label-caps text-[10px]">
-            <span class="lang-en">Schedule</span>
-            <span class="lang-fi">Aikataulu</span>
+            <span class="locale-en">Schedule</span>
+            <span class="locale-fi">Aikataulu</span>
         </span>
     </a>
 </nav>
 <script>
     // Language switching helper
-    function setLanguage(lang) {
+    function setLocale(lang) {
         // Toggle class on body for standard styling cascades
-        document.body.classList.remove('lang-en', 'lang-fi');
-        document.body.classList.add('lang-' + lang);
+        document.body.classList.remove('active-locale-en', 'active-locale-fi');
+        document.body.classList.add('active-locale-' + lang);
         
-        const btnEn = document.getElementById('lang-btn-en');
-        const btnFi = document.getElementById('lang-btn-fi');
+        const btnEn = document.getElementById('locale-btn-en');
+        const btnFi = document.getElementById('locale-btn-fi');
         
         if (btnEn && btnFi) {
             if (lang === 'en') {
@@ -603,20 +603,20 @@
         }
         
         try {
-            localStorage.setItem('preferred-lang', lang);
+            localStorage.setItem('preferred-locale', lang);
         } catch (e) {
             console.warn('LocalStorage is not available:', e);
         }
     }
 
     // Initial language load
-    let savedLang = 'en';
+    let savedLocale = 'en';
     try {
-        savedLang = localStorage.getItem('preferred-lang') || 'en';
+        savedLocale = localStorage.getItem('preferred-locale') || 'en';
     } catch (e) {
         console.warn('LocalStorage is not available:', e);
     }
-    setLanguage(savedLang);
+    setLocale(savedLocale);
 
     // Simple scroll spy for active states in desktop nav
     window.addEventListener('scroll', () => {
