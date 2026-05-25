@@ -116,19 +116,7 @@
         
         /* Language Toggle Styles */
         .lang-fi {
-            display: none;
-        }
-        body.lang-en .lang-fi {
             display: none !important;
-        }
-        body.lang-en .lang-en {
-            display: inline;
-        }
-        body.lang-fi .lang-en {
-            display: none !important;
-        }
-        body.lang-fi .lang-fi {
-            display: inline;
         }
     </style>
     <style>
@@ -582,31 +570,50 @@
 <script>
     // Language switching helper
     function setLanguage(lang) {
-        document.body.classList.remove('lang-en', 'lang-fi');
-        document.body.classList.add('lang-' + lang);
+        const enElements = document.querySelectorAll('.lang-en');
+        const fiElements = document.querySelectorAll('.lang-fi');
+        
+        if (lang === 'en') {
+            enElements.forEach(el => el.style.setProperty('display', 'inline', 'important'));
+            fiElements.forEach(el => el.style.setProperty('display', 'none', 'important'));
+        } else {
+            enElements.forEach(el => el.style.setProperty('display', 'none', 'important'));
+            fiElements.forEach(el => el.style.setProperty('display', 'inline', 'important'));
+        }
         
         const btnEn = document.getElementById('lang-btn-en');
         const btnFi = document.getElementById('lang-btn-fi');
         
-        if (lang === 'en') {
-            btnEn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
-            btnEn.classList.remove('text-on-surface-variant', 'hover:text-primary');
-            
-            btnFi.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
-            btnFi.classList.add('text-on-surface-variant', 'hover:text-primary');
-        } else {
-            btnFi.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
-            btnFi.classList.remove('text-on-surface-variant', 'hover:text-primary');
-            
-            btnEn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
-            btnEn.classList.add('text-on-surface-variant', 'hover:text-primary');
+        if (btnEn && btnFi) {
+            if (lang === 'en') {
+                btnEn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+                btnEn.classList.remove('text-on-surface-variant', 'hover:text-primary');
+                
+                btnFi.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+                btnFi.classList.add('text-on-surface-variant', 'hover:text-primary');
+            } else {
+                btnFi.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+                btnFi.classList.remove('text-on-surface-variant', 'hover:text-primary');
+                
+                btnEn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+                btnEn.classList.add('text-on-surface-variant', 'hover:text-primary');
+            }
         }
         
-        localStorage.setItem('preferred-lang', lang);
+        try {
+            localStorage.setItem('preferred-lang', lang);
+        } catch (e) {
+            console.warn('LocalStorage is not available:', e);
+        }
     }
 
     // Initial language load
-    const savedLang = localStorage.getItem('preferred-lang') || 'en';
+    let savedLang = 'en';
+    try {
+        savedLang = localStorage.getItem('preferred-lang') || 'en';
+    } catch (e) {
+        console.warn('LocalStorage is not available:', e);
+    }
     setLanguage(savedLang);
 
     // Simple scroll spy for active states in desktop nav
