@@ -116,7 +116,16 @@
         
         /* Language Toggle Styles */
         .lang-fi {
-            display: none !important;
+            display: none;
+        }
+        body.lang-en .lang-fi {
+            display: none;
+        }
+        body.lang-fi .lang-en {
+            display: none;
+        }
+        body.lang-fi .lang-fi {
+            display: inline;
         }
     </style>
     <style>
@@ -573,25 +582,6 @@
         // Toggle class on body for standard styling cascades
         document.body.classList.remove('lang-en', 'lang-fi');
         document.body.classList.add('lang-' + lang);
-
-        const enElements = document.querySelectorAll('.lang-en');
-        const fiElements = document.querySelectorAll('.lang-fi');
-        
-        if (lang === 'en') {
-            enElements.forEach(el => {
-                if (el.tagName !== 'BODY') el.style.setProperty('display', 'inline', 'important');
-            });
-            fiElements.forEach(el => {
-                if (el.tagName !== 'BODY') el.style.setProperty('display', 'none', 'important');
-            });
-        } else {
-            enElements.forEach(el => {
-                if (el.tagName !== 'BODY') el.style.setProperty('display', 'none', 'important');
-            });
-            fiElements.forEach(el => {
-                if (el.tagName !== 'BODY') el.style.setProperty('display', 'inline', 'important');
-            });
-        }
         
         const btnEn = document.getElementById('lang-btn-en');
         const btnFi = document.getElementById('lang-btn-fi');
